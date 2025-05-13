@@ -1,86 +1,92 @@
 # author: Matej Grozdanić
 # license: MIT license
-# date: 2025-05-12
-# description: This code is a users models for database. It uses Pydantic for ORM.
+# date: 2025-05-13
+# description: This code is a schemas for API. It uses Pydantic.
 
 from uuid import UUID
+from typing import List, Optional
+from datetime import date
+from uuid import uuid4
 
-from beanie import PydanticObjectId
+# from beanie import PydanticObjectId
 from pydantic import BaseModel, EmailStr, Field
 
 
+# ---------------------
+# API SCHEMAS
+# ---------------------
+class WorkExperience(BaseModel):
+    job_title: str
+    company_name: str
+    start_date: date
+    end_date: Optional[date] = None
+    description: Optional[str] = None
+
+class Project(BaseModel):
+    project_name: str
+    description: Optional[str] = None
+    start_date: date
+    end_date: Optional[date] = None
+    technologies_used: List[str] = []
+
+class Education(BaseModel):
+    degree: str
+    institution: str
+    start_date: date
+    end_date: Optional[date] = None
+    description: Optional[str] = None
+
+class Skill(BaseModel):
+    skill_name: str
+    proficiency: Optional[str] = None
+
+class Company(BaseModel):
+    company_name: str
+    location: Optional[str] = None
+    website: Optional[str] = None
+
+class Media(BaseModel):
+    media_type: str
+    media_url: str
+    description: Optional[str] = None
+
+class Hobby(BaseModel):
+    hobby_name: str
+    description: Optional[str] = None
+
+class Article(BaseModel):
+    title: str
+    content: str
+    publish_date: date
+    author: str
+    link: Optional[str] = None
+
 class User(BaseModel):
-    """
-    Shared User properties. Visible only by admins and self.
-    """
-
-    login_email: EmailStr | None = None
-    is_active: bool | None = None
-    is_superuser: bool | None = None
-    provider: str | None = None
-
-
-class UserInfo(BaseModel):
     """
     User properties returned by API. Contains public user information.
     """
+    uuid: UUID = Field(default_factory=uuid4)
+    login_email: EmailStr
+    hashed_password: Optional[str] = None
+    is_active: bool = True
+    is_superuser: bool = False
+    first_name: Optional[str] = None
+    middle_name: Optional[str] = None
+    last_name: Optional[str] = None
+    date_of_birth: Optional[str] = None
+    picture_path: Optional[str] = None
+    phone_number: Optional[str] = None
+    email: Optional[EmailStr] = None
+    location: Optional[str] = None
+    education: Optional[str] = None
+    work_experience: List[WorkExperience] = []
+    projects: List[Project] = []
+    educations: List[Education] = []
+    skills: List[Skill] = []
+    companies: List[Company] = []
+    media: List[Media] = []
+    hobbies: List[Hobby] = []
+    articles: List[Article] = []
 
-    first_name: str | None = None
-    middle_name: str | None = None
-    last_name: str | None = None
-    picture: str | None = None
-    phone: str | None = None
-    email: EmailStr | None = None
-    location: str | None = None
-    education: str | None = None
-    experience: list | None = None
-    projects: list
-    skills: list
-    company: list
-    networks: list
-    hobbies: list
-    articles: list
-
-
-class UserBase(BaseModel):
-    """
-    Shared User properties. Visible by anyone.
-    """
-
-    first_name: str | None = None
-    last_name: str | None = None
-    picture: str | None = None
-
-
-class PrivateUserBase(UserBase):
-    """
-    Shared User properties. Visible only by admins and self.
-    """
-
-    email: EmailStr | None = None
-    is_active: bool | None = None
-    is_superuser: bool | None = None
-    provider: str | None = None
-
-
-class UserUpdate(UserBase):
-    """
-    User properties to receive via API on update.
-    """
-
-    password: str | None = None
-    email: EmailStr | None = None
-    is_active: bool | None = None
-    is_superuser: bool | None = None
-
-
-class User(PrivateUserBase):
-    """
-    User properties returned by API. Contains private
-    user information such as email, is_active, auth provider.
-
-    Should only be returned to admins or self.
-    """
-
-    id: PydanticObjectId = Field()
-    uuid: UUID
+    class Config:
+        orm_mode = True

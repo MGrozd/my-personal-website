@@ -24,6 +24,17 @@ class Settings(BaseSettings):
     FIRST_SUPERUSER: EmailStr
     FIRST_SUPERUSER_PASSWORD: str
 
+    # FIRST USER
+    USER_LOGIN_EMAIL: EmailStr
+    USER_PASSWORD: str
+    USER_FIRST_NAME: str
+    USER_LAST_NAME: str
+    USER_DATE_OF_BIRTH: str
+    USER_PHONE_NUMBER: str
+    USER_EMAIL: str
+    USER_LOCATION: str
+    USER_EDUCATION: str
+
     # database configurations
     MONGO_HOST: str
     MONGO_PORT: int

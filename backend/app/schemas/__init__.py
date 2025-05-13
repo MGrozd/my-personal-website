@@ -1,2 +1,2 @@
 from .tokens import Token, TokenPayload
-from .users import User, UserUpdate
+from .users import User

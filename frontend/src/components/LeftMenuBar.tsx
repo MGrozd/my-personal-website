@@ -14,7 +14,7 @@ import {
   BarChart,
 } from "@mui/icons-material";
 
-function MainNavigation() {
+function LeftMenuBar() {
   return (
     <Box
       display="flex"
@@ -32,10 +32,10 @@ function MainNavigation() {
         pt={4}
       >
         <Typography variant="h4" fontWeight="bold">
-          Joel <span style={{ color: "white" }}>Cox</span>
+          Matej <span style={{ color: "white" }}>Grozdanić</span>
         </Typography>
-        <Typography variant="body1">Ui & UX Designer</Typography>
-        <Typography variant="body2">JavaScript Engineer</Typography>
+        <Typography variant="body1">Python Developer</Typography>
+        <Typography variant="body2">Full stack developer</Typography>
 
         <List sx={{ width: "100%", mt: 4 }}>
           <ListItemButton component={Link} to="/profile">
@@ -88,4 +88,4 @@ function MainNavigation() {
   );
 }
 
-export default MainNavigation;
+export default LeftMenuBar;

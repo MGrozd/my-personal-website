@@ -7,7 +7,7 @@ from typing import List, Annotated, Optional
 from uuid import UUID, uuid4
 
 from beanie import Document, Indexed
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import EmailStr, Field
 
 # ---------------------
 # DATABASE MODELS
@@ -120,7 +120,6 @@ class User(Document):
     login_email: Annotated[EmailStr, Indexed(unique=True)]
     hashed_password: Optional[str] = None
     is_active: bool = True
-    is_superuser: bool = False
 
     first_name: Optional[str] = None
     middle_name: Optional[str] = None
@@ -140,6 +139,20 @@ class User(Document):
     hobbies: List[Hobby] = []
     articles: List[Article] = []
 
+
+class Admin(User):
+    uuid: Annotated[UUID, Field(default_factory=uuid4), Indexed(unique=True)]
+    login_email: Annotated[EmailStr, Indexed(unique=True)]
+    hashed_password: Optional[str] = None
+    is_superuser: bool = True
+    is_active: bool = True
+
+    first_name: Optional[str] = None
+    middle_name: Optional[str] = None
+    last_name: Optional[str] = None
+    date_of_birth: Optional[str] = None
+    picture_path: Optional[str] = None
+    phone_number: Optional[str] = None
 """
 Company Profile
 ---------------------

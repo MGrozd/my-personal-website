@@ -20,7 +20,7 @@ from ..auth.auth import (
 
 router = APIRouter()
 
-@router.get("/{user_id}", response_model=schemas.UserInfo)
+@router.get("/{user_id}", response_model=schemas.User)
 async def get_user(user_id: UUID):
     """
     Get User Info
