@@ -5,6 +5,7 @@
 
 import { Box, Toolbar } from '@mui/material'
 import { Outlet } from 'react-router-dom'
+import ProfileCard from '../components/ProfileCard'
 import LeftMenuBar from '../components/LeftMenuBar'
 
 // It contains the top menu bar and the main content area
@@ -15,19 +16,41 @@ import LeftMenuBar from '../components/LeftMenuBar'
 
 export default function Root() {
   return (
-    <Box sx={{ display: 'flex' }}>
-      {/* <TopMenuBar /> */}
-      <LeftMenuBar />
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' }, // column on mobile, row on larger screens
+        height: '100vh',
+      }}
+    >
+      {/* Sidebar container */}
       <Box
-        component='main'
         sx={{
-          flexGrow: 1,
-          height: '100vh',
-          overflow: 'auto',
-          paddingBottom: 5,
+          width: { xs: '100%', sm: '35vh' },
+          height: { xs: 'auto', sm: '100vh' },
+          display: 'flex',
+          flexDirection: 'column', // stack ProfileCard and LeftMenuBar vertically
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          borderRight: { sm: '1px solid #ccc' },
+          borderBottom: { xs: '1px solid #ccc', sm: 'none' },
+          bgcolor: 'white', // Optional: give it a red background like before
         }}
       >
-        <Toolbar></Toolbar>
+        <ProfileCard />
+        <LeftMenuBar />
+      </Box>
+
+      {/* Main content area */}
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 2,
+          overflowY: 'auto',
+        }}
+      >
+        <Toolbar />
         <Outlet />
       </Box>
     </Box>

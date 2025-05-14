@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import {
   Box,
-  Typography,
   List,
   ListItemButton,
   ListItemIcon,
@@ -9,82 +8,119 @@ import {
 } from "@mui/material";
 import {
   Person,
-  Work,
-  Folder,
+  Restore,
+  WebRounded,
   BarChart,
+  PresentToAllRounded,
+  BookRounded,
+  DescriptionRounded,
+  BusinessRounded,
+  SchoolRounded,
 } from "@mui/icons-material";
 
 function LeftMenuBar() {
   return (
-    <Box
-      display="flex"
-      height="100vh"
-      fontFamily="Roboto, sans-serif"
-    >
-      {/* Sidebar */}
       <Box
-        width="25%"
-        bgcolor="#f44336"
+        width="35vh"
+        bgcolor="white"
         color="white"
         display="flex"
         flexDirection="column"
         alignItems="center"
-        pt={4}
+        pt={2}
       >
-        <Typography variant="h4" fontWeight="bold">
-          Matej <span style={{ color: "white" }}>Grozdanić</span>
-        </Typography>
-        <Typography variant="body1">Python Developer</Typography>
-        <Typography variant="body2">Full stack developer</Typography>
-
         <List sx={{ width: "100%", mt: 4 }}>
           <ListItemButton component={Link} to="/profile">
-            <ListItemIcon sx={{ color: "white" }}>
+            <ListItemIcon sx={{ color: "#f44336" }}>
               <Person />
             </ListItemIcon>
             <ListItemText
               primary="Profile"
-              primaryTypographyProps={{ color: "white" }}
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
             />
           </ListItemButton>
 
           <ListItemButton component={Link} to="/experience">
-            <ListItemIcon sx={{ color: "white" }}>
-              <Work />
+            <ListItemIcon sx={{ color: "purple" }}>
+              <Restore />
             </ListItemIcon>
             <ListItemText
               primary="Experience"
-              primaryTypographyProps={{ color: "white" }}
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
             />
           </ListItemButton>
 
           <ListItemButton component={Link} to="/projects">
-            <ListItemIcon sx={{ color: "white" }}>
-              <Folder />
+            <ListItemIcon sx={{ color: "green" }}>
+              <WebRounded />
             </ListItemIcon>
             <ListItemText
               primary="Projects"
-              primaryTypographyProps={{ color: "white" }}
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
             />
           </ListItemButton>
 
           <ListItemButton component={Link} to="/skills">
-            <ListItemIcon sx={{ color: "white" }}>
+            <ListItemIcon sx={{ color: "blue" }}>
               <BarChart />
             </ListItemIcon>
             <ListItemText
               primary="Skills"
-              primaryTypographyProps={{ color: "white" }}
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
             />
           </ListItemButton>
-        </List>
-      </Box>
 
-      {/* Placeholder for Main Content */}
-      <Box flexGrow={1} bgcolor="#f5f5f5" p={4}>
-        <Typography variant="h5">Main Content Goes Here</Typography>
+          <ListItemButton component={Link} to="/presence">
+            <ListItemIcon sx={{ color: "darkorange" }}>
+              <PresentToAllRounded />
+            </ListItemIcon>
+            <ListItemText
+              primary="Presence"
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+            />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/educations">
+            <ListItemIcon sx={{ color: "gold" }}>
+              <SchoolRounded />
+            </ListItemIcon>
+            <ListItemText
+              primary="Educations"
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+            />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/companies">
+            <ListItemIcon sx={{ color: "black" }}>
+              <BusinessRounded />
+            </ListItemIcon>
+            <ListItemText
+              primary="Companies"
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+            />
+          </ListItemButton> 
+
+          <ListItemButton component={Link} to="/articles">
+            <ListItemIcon sx={{ color: "mangenta" }}>
+              <DescriptionRounded />
+            </ListItemIcon>
+            <ListItemText
+              primary="Articles"
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+            />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/hobbies">
+            <ListItemIcon sx={{ color: "brown" }}>
+              <BookRounded />
+            </ListItemIcon>
+            <ListItemText
+              primary="Hobbies"
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+            />
+          </ListItemButton>
+        </List> 
       </Box>
-    </Box>
   );
 }
 
