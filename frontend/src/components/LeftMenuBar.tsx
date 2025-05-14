@@ -30,7 +30,7 @@ function LeftMenuBar() {
         pt={2}
       >
         <List sx={{ width: "100%", mt: 4 }}>
-          <ListItemButton component={Link} to="/profile">
+          <ListItemButton component={Link} to="/">
             <ListItemIcon sx={{ color: "#f44336" }}>
               <Person />
             </ListItemIcon>

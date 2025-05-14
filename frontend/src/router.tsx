@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import ErrorPage from './error-page'
-import Profile from './routes/profile'
 import Root from './routes/root'
+import Profile from './routes/profile'
+import WorkExperience from './routes/experience'
 
 export const routes = [
   {
@@ -15,6 +16,10 @@ export const routes = [
       //   path: 'profile',
       //   element: <Profile />,
       // },
+      {
+        path: 'experience',
+        element: <WorkExperience />,
+      },
     ],
   },
 ]

@@ -40,19 +40,20 @@ export default function Root() {
         <ProfileCard />
         <LeftMenuBar />
       </Box>
-
       {/* Main content area */}
       <Box
-        component="main"
         sx={{
-          flexGrow: 1,
-          p: 2,
-          overflowY: 'auto',
+          width: "100%",
+          height: "100vh",
+          fontFamily: "Roboto, sans-serif",
+          background: "linear-gradient(to right, #ffffff, #f0f0f0)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <Toolbar />
         <Outlet />
       </Box>
-    </Box>
+    </Box >
   )
 }

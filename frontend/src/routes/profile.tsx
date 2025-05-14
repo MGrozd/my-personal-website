@@ -1,10 +1,16 @@
+// author: Matej Grozdanić
+// date: 2025-05-13
+// description: This is the profile page component that displays the user's profile information
+// license: MIT
+
 import { Box, Typography } from "@mui/material";
 import { Email, Phone, Home } from "@mui/icons-material";
 
-export default function Profile(): JSX.Element {
+export default function Profile() {
   return (
     <Box
       sx={{
+        width: "100%",
         height: "100vh",
         fontFamily: "Roboto, sans-serif",
         background: "linear-gradient(to right, #ffffff, #f0f0f0)",
@@ -13,10 +19,9 @@ export default function Profile(): JSX.Element {
         justifyContent: "center",
       }}
     >
-      <Box sx={{ maxWidth: 500 }}>
-        <Typography variant="h3" fontWeight="bold">
-          <span style={{ color: "gray" }}>Matej Grozdanić</span>
-          {/* <span style={{ color: "#f44336" }}> Grozdanić</span> */}
+      <Box>
+        <Typography variant="h3" fontWeight="bold" color="gray">
+          Matej Grozdanić
         </Typography>
 
         <Box mt={4}>
@@ -37,5 +42,3 @@ export default function Profile(): JSX.Element {
     </Box>
   );
 }
-
-
