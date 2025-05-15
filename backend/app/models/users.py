@@ -38,6 +38,7 @@ class Project(Document):
     start_date: str
     end_date: Optional[str] = None
     url: Optional[str] = None
+    repository: Optional[str] = None
     technologies: List[str] = []
     team_size: Optional[int] = None
     role: Optional[str] = None
