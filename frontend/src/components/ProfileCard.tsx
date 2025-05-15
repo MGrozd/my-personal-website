@@ -10,7 +10,7 @@ export default function ProfileCard() {
             flexDirection="column"
             alignItems="center"
             justifyContent="flex-start"
-            border={1}
+            // border={1}
             p={2}
         >
             <Avatar

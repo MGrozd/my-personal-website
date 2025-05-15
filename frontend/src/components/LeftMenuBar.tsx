@@ -29,7 +29,7 @@ function LeftMenuBar() {
         alignItems="center"
         pt={2}
       >
-        <List sx={{ width: "100%", mt: 4 }}>
+        <List sx={{ width: "100%", mt: 0 }}>
           <ListItemButton component={Link} to="/">
             <ListItemIcon sx={{ color: "#f44336" }}>
               <Person />

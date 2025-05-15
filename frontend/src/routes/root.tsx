@@ -3,8 +3,8 @@
 // description: This is the root layout component that wraps around all the routes
 // license: MIT
 
-import { Box, Toolbar } from '@mui/material'
 import { Outlet } from 'react-router-dom'
+import { Box } from '@mui/material'
 import ProfileCard from '../components/ProfileCard'
 import LeftMenuBar from '../components/LeftMenuBar'
 
@@ -20,7 +20,6 @@ export default function Root() {
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' }, // column on mobile, row on larger screens
-        height: '100vh',
       }}
     >
       {/* Sidebar container */}

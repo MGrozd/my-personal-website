@@ -4,7 +4,7 @@
 // license: MIT
 
 import { Card, CardContent, Typography, Divider, Box } from "@mui/material";
-import WorkIcon from "@mui/icons-material/Work";
+import { BusinessRounded, GradeRounded, Restore } from "@mui/icons-material";
 
 const workExperience = [
   {
@@ -12,18 +12,22 @@ const workExperience = [
     company: "Freelancer",
     date: "01/2025 – present",
     details: [
-      "Designing and developing game for release on Steam platform"
+      "Worked on in house made video game in C++ and SFML library for release on Steam platform",
     ],
-    technologies: "Python, Flask, PostgreSQL, Docker, GitLab CI/CD",
+    achievements: [],
+    technologies: "C++, SFML, GitLab CI/CD",
   },
   {
     position: "PYTHON DEVELOPER, C++ GAME DEVELOPER",
-    company: "ONE CODE, obrti za računalno programiranje, Đakovo",
+    company: "ONE CODE, obrt za računalno programiranje, Đakovo",
     date: "12/2022 – 01/2025",
     details: [
-      "Designed and developed online game for release on Steam platform",
-      "Developed the user permissions mechanism within the FastAPI framework",
-      "Implemented automated email messaging and contributed to the development of a script for video animation"
+      "Worked on in house made video game in C++ and SFML library for release on Steam platform",
+      "Worked for different clients on various projects in Python and FastAPI",
+    ],
+    achievements: [
+      "Developed customized user permissions mechanism within the FastAPI framework",
+      "Wrote a script in Bash for transferring data from PostgreSQL in Docker container to file system"
     ],
     technologies: "Python, Flask, PostgreSQL, Docker, GitLab CI/CD",
   },
@@ -35,15 +39,23 @@ const workExperience = [
       "Worked on website for association in Flask with Bootstrap",
       "Worked on website for perfume store in Flask with Bootstrap and PostgreSQL"
     ],
-    technologies: "Python, Flask, PostgreSQL, Docker, GitLab CI/CD",
+    achievements: [
+      "Deployed PIA association's website on pythonanywhere.com",
+    ],
+    technologies: "Python, Flask, PostgreSQL, Docker, GitLab CI/CD, Jira",
   },
   {
     position: "PYTHON & POSTGRESQL DEVELOPER",
-    company: "Inovativna ideja, Zagreb",
+    company: "Infodom d.o.o., Zagreb",
     date: "02/2021 – 02/2022",
     details: [
       "Involved in development of business application (ERP) in Odoo framework",
-      "Designed and developed JSON REST APIs in Odoo framework"
+      "Designed and developed JSON REST APIs in Odoo framework",
+      "Developed inventory module in Odoo framework",
+    ],
+    achievements: [
+      "Developed a script in Python for creating reports in Excel format from PostgreSQL database",
+      "Developed a script for automatic barcode generation with Python",
     ],
     technologies: "Python, Flask, PostgreSQL, Docker, GitLab CI/CD",
   },
@@ -55,6 +67,9 @@ const workExperience = [
       "Worked on the development of tools for the preparation and analysis of data obtained from simulations of physical processes",
       "Worked on the development of tools for system testing software"
     ],
+    achievements: [
+      "Extracted data from binary file format(used by Abaqus software) and used it in a project in Python",
+    ],
     technologies: "Python, Flask, PostgreSQL, Docker, GitLab CI/CD",
   },
 ];
@@ -64,28 +79,34 @@ const WorkExperience = () => {
     <Card sx={{ maxWidth: 900, margin: "auto", mt: 4, p: 2 }}>
       <CardContent>
         <Box display="flex" alignItems="center" mb={2}>
-          <WorkIcon sx={{ mr: 1 }} />
-          <Typography variant="h5">Work Experience</Typography>
+          <Restore sx={{ mr: 1, color: "purple" }} />
+          <Typography variant="h5">Experience</Typography>
         </Box>
-        <Divider sx={{ mb: 2 }} />
         {workExperience.map((job, index) => (
           <Box key={index} mb={3}>
-            <Box>
-                <Typography variant="h6">{job.position}</Typography>
+            <Divider sx={{ mb: 2, backgroundColor: "grey.400", width: "100%" }} />
+            <Box display="flex" justifyContent="space-between" alignItems="center">
+              <Typography variant="h6">{job.position}</Typography>
+              <Typography variant="subtitle2" color="text.secondary">{job.date}</Typography>
             </Box>
-            <Box>
-                <Typography variant="subtitle2" color="text.secondary">{job.date}</Typography>
+            <Box display="flex" alignItems="center" mb={2}>
+              <BusinessRounded sx={{ mr: 1, color: "black" }} />
+              <Typography variant="subtitle2" color="text.secondary">{job.company}</Typography>
             </Box>
-            <Typography variant="subtitle2" color="text.secondary">
-              {job.company}
-            </Typography>
-            <ul>
+            <Box component="ul" sx={{ pl: 2, mt: 1 }}>
               {job.details.map((detail, i) => (
-                <li key={i}>
+                <li key={i} >
                   <Typography variant="body2">{detail}</Typography>
                 </li>
               ))}
-            </ul>
+
+              {job.achievements.map((achievement, i) => (
+                <Box key={`achievement-${i}`} component="li" display="flex" alignItems="center" mb={0.5}>
+                  <GradeRounded sx={{ mr: 1, color: "gold" }} />
+                  <Typography variant="body2">{achievement}</Typography>
+                </Box>
+              ))}
+            </Box>
           </Box>
         ))}
       </CardContent>

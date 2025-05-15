@@ -3,6 +3,7 @@ import ErrorPage from './error-page'
 import Root from './routes/root'
 import Profile from './routes/profile'
 import WorkExperience from './routes/experience'
+import Projects from './routes/projects'
 
 export const routes = [
   {
@@ -19,6 +20,10 @@ export const routes = [
       {
         path: 'experience',
         element: <WorkExperience />,
+      },
+      {
+        path: 'projects',
+        element: <Projects />,
       },
     ],
   },
