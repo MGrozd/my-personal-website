@@ -139,7 +139,7 @@ class User(Document):
     educations: List[Education] = []
     skills: List[Skill] = []
     companies: List[Company] = []
-    media: List[Media] = []
+    media: List[Presence] = []
     hobbies: List[Hobby] = []
     articles: List[Article] = []
 

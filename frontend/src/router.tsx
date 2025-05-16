@@ -7,6 +7,7 @@ import Projects from './routes/projects'
 import Skills from './routes/skills'
 import Presence from './routes/presence'
 import Languages from './routes/languages'
+import Educations from './routes/educations'
 
 export const routes = [
   {
@@ -35,6 +36,10 @@ export const routes = [
       {
         path: 'languages',
         element: <Languages />,
+      },
+      {
+        path: 'educations',
+        element: <Educations />,
       },
     ],
   },
