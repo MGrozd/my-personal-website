@@ -5,6 +5,7 @@ import Profile from './routes/profile'
 import WorkExperience from './routes/experience'
 import Projects from './routes/projects'
 import Skills from './routes/skills'
+import Presence from './routes/presence'
 
 export const routes = [
   {
@@ -25,6 +26,10 @@ export const routes = [
       {
         path: 'skills',
         element: <Skills />,
+      },
+      {
+        path: 'presence',
+        element: <Presence />,
       },
     ],
   },

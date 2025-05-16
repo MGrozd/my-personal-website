@@ -5,27 +5,8 @@
 
 import { Card, CardContent, Typography, Divider, Box, Link } from "@mui/material";
 import { Web, LinkRounded, GitHub, Build } from "@mui/icons-material";
+import projectsData from "../data/projects";
 
-const projects = [
-    {
-        name: "PERSONAL WEBSITE",
-        description: "Website made to present personal information which is made in FARM stack(FastAPI, React, MongoDB)",
-        start_date: "05/2025",
-        end_date: "present",
-        url: "https://matejgrozdanic.com",
-        repository: "https://github.com/MGrozd/my-personal-website",
-        technologies: "Python, FastAPI, TypeScript, React, ReactRouter, MaterialUI, MongoDB, Github, Docker, Google Cloud",
-    },
-    {
-        name: "PIA ASSOCIATION WEBSITE",
-        description: "Website for PIA association made in Flask with Bootstrap",
-        start_date: "01/2025",
-        end_date: "present",
-        url: "https://piadjakovo.pythonanywhere.com",
-        repository: "",
-        technologies: "Python, Flask, Bootstrap, GitLab, PythonAnywhere",
-    },
-];
 
 const Projects = () => {
     return (
@@ -35,7 +16,7 @@ const Projects = () => {
                     <Web sx={{ mr: 1, color: "green" }} />
                     <Typography variant="h5">Projects</Typography>
                 </Box>
-                {projects.map((project, index) => (
+                {projectsData.map((project, index) => (
                     <Box key={index} mb={3}>
                         <Divider sx={{ mb: 2, backgroundColor: "grey.400", width: "100%" }} />
                         <Box display="flex" justifyContent="space-between" alignItems="center">

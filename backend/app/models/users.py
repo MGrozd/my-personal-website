@@ -94,9 +94,12 @@ class Company(Document):
     is_active: bool = True
 
 
-class Media(Document):
+class Presence(Document):
     name: str
+    type: str
+    role: Optional[str] = None
     description: Optional[str] = None
+    date: Optional[str] = None
     url: Optional[str] = None
     is_active: bool = True
 
