@@ -10,6 +10,7 @@ import Languages from './routes/languages'
 import Educations from './routes/educations'
 import Companies from './routes/companies'
 import Articles from './routes/articles'
+import Hobbies from './routes/hobbies'
 
 export const routes = [
   {
@@ -50,6 +51,10 @@ export const routes = [
       {
         path: 'articles',
         element: <Articles />,
+      },
+      {
+        path: 'hobbies',
+        element: <Hobbies />,
       },
     ],
   },
