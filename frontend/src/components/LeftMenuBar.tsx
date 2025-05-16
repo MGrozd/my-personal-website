@@ -16,6 +16,7 @@ import {
   DescriptionRounded,
   BusinessRounded,
   SchoolRounded,
+  LanguageRounded,
 } from "@mui/icons-material";
 
 function LeftMenuBar() {
@@ -80,8 +81,18 @@ function LeftMenuBar() {
             />
           </ListItemButton>
 
-          <ListItemButton component={Link} to="/educations">
+          <ListItemButton component={Link} to="/languages">
             <ListItemIcon sx={{ color: "gold" }}>
+              <LanguageRounded />
+            </ListItemIcon>
+            <ListItemText
+              primary="Languages"
+              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+            />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/educations">
+            <ListItemIcon sx={{ color: "pink" }}>
               <SchoolRounded />
             </ListItemIcon>
             <ListItemText

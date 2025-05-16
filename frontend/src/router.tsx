@@ -6,6 +6,7 @@ import WorkExperience from './routes/experience'
 import Projects from './routes/projects'
 import Skills from './routes/skills'
 import Presence from './routes/presence'
+import Languages from './routes/languages'
 
 export const routes = [
   {
@@ -30,6 +31,10 @@ export const routes = [
       {
         path: 'presence',
         element: <Presence />,
+      },
+      {
+        path: 'languages',
+        element: <Languages />,
       },
     ],
   },
