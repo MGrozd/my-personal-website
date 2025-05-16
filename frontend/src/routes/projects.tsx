@@ -19,7 +19,7 @@ const Projects = () => {
                 {projectsData.map((project, index) => (
                     <Box key={index} mb={3}>
                         <Divider sx={{ mb: 2, backgroundColor: "grey.400", width: "100%" }} />
-                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                        <Box display="flex" justifyContent="space-between" alignItems="center" gap={5}>
                             <Typography variant="h6">{project.name}</Typography>
                             <Typography variant="subtitle2" color="text.secondary">{project.start_date}-{project.end_date}</Typography>
                         </Box>

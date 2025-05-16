@@ -18,7 +18,7 @@ const Languages = () => {
                 {languagesData.map((language, index) => (
                     <Box key={index} mb={3}>
                         <Divider sx={{ mb: 2, backgroundColor: "grey.400", width: "100%" }} />
-                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                        <Box display="flex" justifyContent="space-between" alignItems="center" gap={5}>
                             <Typography variant="h6">{language.name}</Typography>
                         </Box>
                         <Box component="ul" sx={{ pl: 2, mt: 1 }}>

@@ -8,6 +8,7 @@ import Skills from './routes/skills'
 import Presence from './routes/presence'
 import Languages from './routes/languages'
 import Educations from './routes/educations'
+import Companies from './routes/companies'
 
 export const routes = [
   {
@@ -40,6 +41,10 @@ export const routes = [
       {
         path: 'educations',
         element: <Educations />,
+      },
+      {
+        path: 'companies',
+        element: <Companies />,
       },
     ],
   },
