@@ -9,6 +9,7 @@ import Presence from './routes/presence'
 import Languages from './routes/languages'
 import Educations from './routes/educations'
 import Companies from './routes/companies'
+import Articles from './routes/articles'
 
 export const routes = [
   {
@@ -45,6 +46,10 @@ export const routes = [
       {
         path: 'companies',
         element: <Companies />,
+      },
+      {
+        path: 'articles',
+        element: <Articles />,
       },
     ],
   },
