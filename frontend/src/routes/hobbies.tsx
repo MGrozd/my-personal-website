@@ -15,21 +15,21 @@ const Hobbies = () => {
                     <BookRounded sx={{ mr: 1, color: "green" }} />
                     <Typography variant="h5">Hobbies</Typography>
                 </Box>
-                {hobbiesData.map((hobbies, index) => (
+                {hobbiesData.map((hobby, index) => (
                     <Box key={index} mb={3}>
                         <Divider sx={{ mb: 2, backgroundColor: "grey.400", width: "100%" }} />
                         <Box display="flex" justifyContent="space-between" alignItems="center" gap={5}>
-                            <Typography variant="h6">{hobbies.name}</Typography>
+                            <Typography variant="h6">{hobby.name}</Typography>
                         </Box>
                         <Box display="flex" alignItems="center" mb={2}>
                             <Grade sx={{ mr: 1, color: "gold" }} />
-                            <Typography variant="subtitle2" color="text.secondary">{hobbies.favorite}</Typography>
+                            <Typography variant="subtitle2" color="text.secondary">{hobby.favorite}</Typography>
                         </Box>
                         <Box display="flex" alignItems="center" mb={2}>
-                            <Typography variant="subtitle2">{hobbies.description}</Typography>
+                            <Typography variant="subtitle2">{hobby.description}</Typography>
                         </Box>
                         <Box component="ul" sx={{ pl: 2, mt: 1 }}>
-                            {hobbies.items.map((item, i) => (
+                            {hobby.items.map((item, i) => (
                                 <li key={i} >
                                     <Typography variant="body2">{item}</Typography>
                                 </li>

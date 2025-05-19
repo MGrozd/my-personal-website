@@ -20,6 +20,18 @@ export default function Profile() {
       }}
     >
       <Box>
+        <Typography variant="body1">
+          Hi! I want to introduce myself, but first i want to bring smile on your face. 
+          I have one very very fast joke I think it is the fastest joke you ever heard, are you ready? 
+          Here it is come: It's already gone. 
+          Hahahahah :D 
+          I know it ss lame, but if i can see you right now, i can bet, i would see smile on your face :) 
+          Now let's together find out how i can help you?
+          </Typography>
+      </Box>
+
+
+      <Box>
         <Typography variant="h3" fontWeight="bold" color="gray">
           Matej Grozdanić
         </Typography>

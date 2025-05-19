@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
 import ProfileCard from '../components/ProfileCard'
 import LeftMenuBar from '../components/LeftMenuBar'
+import Footer from '../components/Footer'
 
 // It contains the top menu bar and the main content area
 // It uses the Outlet component to render the child routes
@@ -23,7 +24,7 @@ export default function Root() {
       }}
     >
       {/* Sidebar container */}
-      <Box
+      {/* <Box
         sx={{
           width: { xs: '100%', sm: '35vh' },
           height: { xs: 'auto', sm: '100vh' },
@@ -35,6 +36,20 @@ export default function Root() {
           borderBottom: { xs: '1px solid #ccc', sm: 'none' },
           bgcolor: 'white', // Optional: give it a red background like before
         }}
+      > */}
+      {/* Sidebar container */}
+      <Box
+        sx={{
+          width: { xs: '100%', sm: '35vh' },
+          flexShrink: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          borderRight: { sm: '1px solid #ccc' },
+          borderBottom: { xs: '1px solid #ccc', sm: 'none' },
+          bgcolor: 'white',
+        }}
       >
         <ProfileCard />
         <LeftMenuBar />
@@ -43,15 +58,18 @@ export default function Root() {
       <Box
         sx={{
           width: "100%",
-          height: "100vh",
+          minHeight: "100vh",
           fontFamily: "Roboto, sans-serif",
           background: "linear-gradient(to right, #ffffff, #f0f0f0)",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          flexDirection: "column", // stack Outlet + Footer vertically
+          justifyContent: "space-between",
         }}
       >
-        <Outlet />
+        <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Outlet />
+        </Box>
+        <Footer />
       </Box>
     </Box >
   )
