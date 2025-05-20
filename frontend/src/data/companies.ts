@@ -5,7 +5,7 @@
 
 const companiesData = [
     {
-        name: "ONE CODE, Obrt za računalno programiranje, vl. Matej Grozdanić",
+        name: "ONE CODE, obrt za računalno programiranje, vl. Matej Grozdanić",
         type: "Sole Proprietorship",
         role: "Founder and Owner",
         description: "Sole proprietorship for software development and consulting.",
