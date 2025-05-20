@@ -5,11 +5,13 @@
 
 const educationsData = [
   {
-    degree: 'CERTIFICATE',
+    degree: 'CERTIFICATE OF PROFICIENCY IN THE PYTHON PROGRAMMING LANGUAGE',
     institute: 'OpenEDG Python Institute',
     programme: 'PCAP - CERTIFIED ASSOCIATE IN PYTHON PROGRAMMING',
     date: '25/09/2021',
     url: 'https://pythoninstitute.org/credential-verification',
+    pdfPath: '../../public/certificate_KcVM.SXLP.jPyB.pdf',
+    pdfName: 'Certificate'
   },
   {
     degree: 'UNIVERSITY BACHELOR IN MECHANICAL ENGINEERING',
@@ -17,6 +19,8 @@ const educationsData = [
     programme: 'Mechanical Engineering, Engineering Design',
     date: '10/2014 – 10/2019',
     url: 'https://cadlab.fsb.hr/en/education/projects/uredaj-za-muljanje-i-presanje-jagodicastog-voca-290',
+    pdfPath: '../../public/diploma.pdf',
+    pdfName: 'Diploma'
   },
 ]
 

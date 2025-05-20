@@ -6,14 +6,14 @@
 const hobbiesData = [
     {
         name: "READING BOOKS",
-        favorite: "My favorite book is The Richest Man in Babylon.",
-        description: "I love reading books, especially self development books.",
+        favorite: "My favorite book is The Richest Man in Babylon because it offers timeless financial wisdom through engaging parables.",
+        description: "Reading books is one of my favorite hobbies. It helps me relax, expand my knowledge, and explore different perspectives and cultures through stories and ideas. I especially enjoy reading self-development books.",
         items: ["Think and Grow Rich", "Rich Dad Poor Dad"],
     },
     {
         name: "WATCHING MOVIES AND TV SHOWS",
-        favorite: "My favorite serial is Star Wars.",
-        description: "I love watching movies and TV shows, especially science fiction.",
+        favorite: "My favorite series is Star Wars — I love its epic story, characters, and futuristic universe.",
+        description: "I enjoy watching movies and TV shows, especially science fiction. It allows me to explore imaginative worlds and futuristic ideas.",
         items: ["Star Trek"],
     },
 ];

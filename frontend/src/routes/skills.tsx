@@ -3,7 +3,7 @@
 // description: This is the skills page component that displays the user's skills information
 // license: MIT
 
-import { Card, CardContent, Typography, Divider, Box, Button } from "@mui/material";
+import { Card, CardContent, Typography, Divider, Box, Tooltip, IconButton } from "@mui/material";
 import { BarChartRounded, FileDownloadRounded, Grade } from "@mui/icons-material";
 import skillsData from "../data/skills";
 
@@ -30,23 +30,23 @@ const Skills = () => {
                                 <Typography variant="body2">{skill.description}</Typography>
                             </li>
 
-                            <Box display="flex" alignItems="center" mb={3}>
+                            <Box display="flex" alignItems="center" mb={0}>
                                 <Grade sx={{ mr: 1, color: "gold" }} />
                                 <Typography variant="body2">{skill.level}</Typography>
                             </Box>
+
                             {skill.references?.map((ref, indexRef) => (
-                                <Box key={indexRef} display="flex" alignItems="center" mb={3}>
-                                    <Button
-                                    variant="contained"
-                                    component="a"
-                                    href={ref.path}
-                                    download
-                                    sx={{ mr: 1 }}
-                                    >
-                                    <FileDownloadRounded sx={{ mr: 1, color: "gold" }} />
-                                    </Button>
-                                    <Typography variant="body2">Reference</Typography>
-                                </Box>
+                            <Tooltip key={indexRef} title="Download">
+                                <IconButton
+                                component="a"
+                                href={ref.path}
+                                download
+                                sx={{ color: "gold" }}
+                                >
+                                <FileDownloadRounded />
+                                <Typography variant="body2" sx={{ color: "gray" , fontWeight: "bold" }}>Reference</Typography>
+                                </IconButton>
+                            </Tooltip>
                             ))}
                         </Box>
                     </Box>

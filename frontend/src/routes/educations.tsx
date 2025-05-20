@@ -3,8 +3,8 @@
 // description: This is the educations page component that displays the user's educations information
 // license: MIT
 
-import { Card, CardContent, Typography, Divider, Box, Link } from "@mui/material";
-import { SchoolRounded, LinkRounded, BusinessRounded } from "@mui/icons-material";
+import { Card, CardContent, Typography, Divider, Box, Link, Tooltip, IconButton } from "@mui/material";
+import { SchoolRounded, LinkRounded, BusinessRounded, FileDownloadRounded } from "@mui/icons-material";
 import educationsData from "../data/educations";
 
 const Educations = () => {
@@ -27,11 +27,22 @@ const Educations = () => {
               <Typography variant="subtitle2" color="text.secondary">{education.institute}</Typography>
             </Box>
             <Box component="ul" sx={{ pl: 2, mt: 1 }}>
-                <Typography variant="body2">{education.programme}</Typography>
-                <Box component="li" display="flex" alignItems="center" mb={0.5}>
-                  <LinkRounded sx={{ mr: 1, color: "gold" }} />
-                  <Link href={education.url} variant="body2">{education.url}</Link>
-                </Box>
+              <Typography variant="body2">{education.programme}</Typography>
+              <Box component="li" display="flex" alignItems="center" mb={0.5}>
+                <LinkRounded sx={{ mr: 1, color: "gold" }} />
+                <Link href={education.url} variant="body2">{education.url}</Link>
+              </Box>
+              <Tooltip title="Download">
+                <IconButton
+                  component="a"
+                  href={education.pdfPath}
+                  download
+                  sx={{ color: "gold" }}
+                >
+                  <FileDownloadRounded />
+                  <Typography variant="body2" sx={{ color: "gray" , fontWeight: "bold" }}>{education.pdfName}</Typography>
+                </IconButton>
+              </Tooltip>
             </Box>
           </Box>
         ))}
