@@ -5,14 +5,14 @@
 
 const articlesData = [
     {
-        name: "TITLE",
-        description: "Website made to present personal information which is made in FARM stack(FastAPI, React, MongoDB)",
+        name: "ARTICLE NAME",
+        description: "Shorten the article description.",
         date: "16/05/2025",
         url: "https://matejgrozdanic.com",
         repository: "https://github.com/MGrozd/my-personal-website",
-        content: "This is the content of the article",
-        conclusion: "This is the conclusion of the article",
-        technologies: "How to improve your website",
+        content: "This is the content of the article.",
+        conclusion: "This is the conclusion of the article.",
+        technologies: "Technologies used.",
     },
 ];
 

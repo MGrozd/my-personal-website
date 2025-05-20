@@ -40,12 +40,34 @@ export default function Root() {
       {/* Sidebar container */}
       <Box
         sx={{
-          width: { xs: '100%', sm: '35vh' },
+          position: {
+            xs: 'relative',  // 📱 Na malim ekranima: normalno se ponaša
+            sm: 'fixed'      // 💻 Na većim ekranima: fiksiran
+          },
+          top: {
+            xs: 'auto',
+            sm: 0
+          },
+          left: {
+            xs: 'auto',
+            sm: 0
+          },
+          height: {
+            xs: 'auto',
+            sm: '100vh'
+          },
+          width: {
+            xs: '100%',
+            sm: '35vh'
+          },
           flexShrink: 0,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          alignItems: 'center',
+          alignItems: {
+            xs: 'left',
+            sm: 'center'
+          },
           borderRight: { sm: '1px solid #ccc' },
           borderBottom: { xs: '1px solid #ccc', sm: 'none' },
           bgcolor: 'white',

@@ -8,7 +8,7 @@ const educationsData = [
     degree: 'CERTIFICATE',
     institute: 'OpenEDG Python Institute',
     programme: 'PCAP - CERTIFIED ASSOCIATE IN PYTHON PROGRAMMING',
-    date: '2021/09/25',
+    date: '25/09/2021',
     url: 'https://pythoninstitute.org/credential-verification',
   },
   {

@@ -4,7 +4,7 @@
 // license: MIT
 
 import { Card, CardContent, Typography, Divider, Box } from "@mui/material";
-import { BusinessRounded, GradeRounded, Restore } from "@mui/icons-material";
+import { BusinessRounded, EmojiEventsRounded, Restore, BuildRounded } from "@mui/icons-material";
 import workExperienceData from "../data/experience";
 
 
@@ -36,10 +36,26 @@ const WorkExperience = () => {
 
               {job.achievements.map((achievement, i) => (
                 <Box key={`achievement-${i}`} component="li" display="flex" alignItems="center" mb={0.5}>
-                  <GradeRounded sx={{ mr: 1, color: "gold" }} />
+                  <EmojiEventsRounded sx={{ mr: 1, color: "gold" }} />
                   <Typography variant="body2">{achievement}</Typography>
                 </Box>
               ))}
+
+              <Box key="technologies" component="li" display="flex" alignItems="center" mb={0.5}>
+                <BuildRounded sx={{ mr: 1, color: "gold" }} />
+                <Typography variant="body2" mr={1}>Technologies:</Typography>
+                <Box component="ul" sx={{ml: 5, p: 0,}}>
+                  {Object.entries(job.technologies || {}).map(([key, value]) => (
+                    Array.isArray(value) && value.length > 0 && (
+                      <li key={key}>
+                        <Typography variant="body2">
+                          {value.join(", ")}
+                        </Typography>
+                      </li>
+                    )
+                  ))}
+                </Box>
+              </Box>
             </Box>
           </Box>
         ))}

@@ -1,3 +1,8 @@
+// author: Matej Grozdanić
+// date: 2025-05-19
+// description: This is the Left Menu Bar component of the website.
+// license: MIT
+
 import { Link } from "react-router-dom";
 import {
   Box,

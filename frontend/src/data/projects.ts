@@ -6,20 +6,18 @@
 const projectsData = [
     {
         name: "PERSONAL WEBSITE",
-        description: "Website made to present personal information which is made in FARM stack(FastAPI, React, MongoDB)",
-        start_date: "05/2025",
-        end_date: "present",
+        description: "Built a personal website using the FARM stack (FastAPI, React, MongoDB) to showcase personal information and projects.",
+        timeframe: "05/2025 – Ongoing",
         url: "https://matejgrozdanic.com",
         repository: "https://github.com/MGrozd/my-personal-website",
         technologies: "Python, FastAPI, TypeScript, React, ReactRouter, MaterialUI, MongoDB, Github, Docker, Google Cloud",
     },
     {
         name: "PIA ASSOCIATION WEBSITE",
-        description: "Website for PIA association made in Flask with Bootstrap",
-        start_date: "01/2025",
-        end_date: "present",
+        description: "Built and currently maintain the PIA association’s website using Flask and Bootstrap.",
+        timeframe: "01/2025 – Ongoing",
         url: "https://piadjakovo.pythonanywhere.com",
-        repository: "",
+        repository: "https://github.com/MGrozd/pia-association-website/",
         technologies: "Python, Flask, Bootstrap, GitLab, PythonAnywhere",
     },
 ];

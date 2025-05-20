@@ -1,25 +1,34 @@
+// author: Matej Grozdanić
+// date: 2025-05-19
+// description: This is the Profile Card component of the website.
+// license: MIT
+
 import { Box, Avatar, Typography } from '@mui/material'
 
 export default function ProfileCard() {
     return (
         <Box
-            width="35vh"
-            height="35vh"
-            display="flex"
-            bgcolor="#f44336" 
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="flex-start"
-            // border={1}
-            p={2}
+            sx={{
+                width: {
+                    xs: '100%',
+                    sm: '35vh',
+                },
+                aspectRatio: '1 / 1',
+                display: 'flex',         // ✅ Use colon, not equal sign
+                bgcolor: '#f44336', 
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                p: 2,                    // Theme-based padding (2 * 8px = 16px)
+            }}
         >
             <Avatar
                 alt="Profile picture"
                 src="/profile.jpg"
-                variant="square" 
+                variant="square"
                 sx={{
-                    width: '20vh',
-                    height: '20vh',
+                    width: { xs: '80vw', sm: '20vh' },  // 120px on small screens, 160px on larger
+                    height: { xs: '80vw', sm: '20vh' },
                     mb: 1,
                 }}
                 imgProps={{

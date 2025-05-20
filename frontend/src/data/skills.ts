@@ -11,11 +11,8 @@ const skillsData = [
         level: "Expert",
         experience: "5 years",
         urls: ["https://www.python.org/"],
-        certifications: [
-            { name: "PCAP - Certified Associate in Python Programming", date: "2021-09-25", url: "https://pythoninstitute.org/credential-verification" }
-        ],
         references: [
-            { name: "", relation: "Mentor", contact: "" }
+            { name: "", relation: "Mentor", contact: "", path: "../../public/Pismo_preporuke_za_Mateja_Grozdanića.pdf" }
         ],
     },
     {
@@ -25,6 +22,7 @@ const skillsData = [
         level: "Proficient",
         experience: "4 years",
         urls: ["https://docs.python.org/3/library/unittest.html", "https://docs.pytest.org/en/6.2.x/"],
+        references: [],
     },
     {
         name: "PYQT5 / TKINTER",
@@ -42,7 +40,7 @@ const skillsData = [
         experience: "3 years",
         urls: ["https://fastapi.tiangolo.com/", "https://flask.palletsprojects.com/"],
         references: [
-            { name: "", relation: "", contact: "" }
+            { name: "", relation: "", contact: "", path: "../../public/Recommendation.pdf" }
         ],
     },
     {
@@ -52,6 +50,7 @@ const skillsData = [
         level: "Proficient",  
         experience: "1 years",
         urls: ["https://reactjs.org/", "https://mui.com/", "https://getbootstrap.com/"],
+        references: [],
     },
     {
         name: "HTML / CSS / JS / TS",
@@ -60,6 +59,7 @@ const skillsData = [
         level: "Working Knowledge",
         experience: "3 years",
         urls: ["https://www.w3schools.com/", "https://developer.mozilla.org/en-US/docs/Web"],
+        references: [],
     },
     {
         name: "REST API / SOAP API",
@@ -68,6 +68,7 @@ const skillsData = [
         level: "Proficient",
         experience: "3 years",
         urls: ["https://restfulapi.net/"],
+        references: [],
     },
     {
         name: "POSTGRESQL / MYSQL / SQLITE",
@@ -76,14 +77,16 @@ const skillsData = [
         level: "Working Knowledge",
         experience: "4 years",
         urls: ["https://www.postgresql.org/", "https://www.mysql.com/", "https://www.sqlite.org/"],
+        references: [],
     },
     {   
         name: "MONGODB / FIREBASE", 
         description: "MongoDB and Firebase are NoSQL databases used for storing and managing data in web applications.",
-        category: "NOSQL Database",
+        category: "NoSQL Database",
         level: "Working Knowledge",  
         experience: "0.5 years",
         urls: ["https://www.mongodb.com/", "https://firebase.google.com/"],
+        references: [],
     },
     {
         name: "GIT / GITHUB / GITLAB",
@@ -92,6 +95,7 @@ const skillsData = [
         level: "Proficient",
         experience: "4 years",
         urls: ["https://git-scm.com/"],
+        references: [],
     },
     {
         name: "CI/CD",
@@ -100,6 +104,7 @@ const skillsData = [
         level: "Working Knowledge",
         experience: "0.5 years",
         urls: ["https://www.atlassian.com/continuous-delivery/ci-vs-ci"],
+        references: [],
     },
     {
         name: "DOCKER",
@@ -108,6 +113,7 @@ const skillsData = [
         level: "Working Knowledge",
         experience: "2 years",
         urls: ["https://www.docker.com/"],
+        references: [],
     },
     {
         name: "PYTHONANYWHERE / HEROKU",
@@ -116,6 +122,7 @@ const skillsData = [
         level: "Working Knowledge",
         experience: "0.5 years",
         urls: ["https://www.pythonanywhere.com/", "https://www.heroku.com/"],
+        references: [],
     },
     {
         name: "ODOO",
@@ -124,6 +131,7 @@ const skillsData = [
         level: "Proficient",
         experience: "1 years",
         urls: ["https://www.odoo.com/"],
+        references: [],
     },
     {
         name: "C++",
@@ -132,6 +140,7 @@ const skillsData = [
         level: "Working Knowledge",
         experience: "2 years",
         urls: ["https://isocpp.org/"],
+        references: [],
     },
     {
         name: "SFML",   
@@ -140,14 +149,16 @@ const skillsData = [
         level: "Expert",
         experience: "2 years",
         urls: ["https://www.sfml-dev.org/"],
+        references: [],
     },
-    {   
+    {
         name: "BASH",
         description: "Bash is a Unix shell and command language used for scripting and automating tasks.",
         category: "Scripting",
         level: "Working Knowledge",
         experience: "2 years",
         urls: ["https://www.gnu.org/software/bash/"],
+        references: [],
     },
     {
         name: "FREECAD",
@@ -156,6 +167,7 @@ const skillsData = [
         urls: ["https://www.freecad.org/"],
         level: "Proficient",
         experience: "2 years",
+        references: [],
     },
 ];
 
