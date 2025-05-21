@@ -28,11 +28,12 @@ export default function Profile() {
       >
         <Typography variant="body1">Hi! 👋</Typography>
         <Typography variant="body1">I’d like to introduce myself — my name is Matej.</Typography>
-        <Typography variant="body1">I have a very, very fast joke for you, and I think it’s the fastest one you’ve ever heard.</Typography>
-        <Typography variant="body1">Are you ready? Then click the button below! 👇</Typography>
+        <Typography variant="body1">I have a very, very fast joke for you. I think it’s the fastest one you’ve ever heard.</Typography>
+        <Typography variant="body1">Are you ready? Click the button below! 👇</Typography>
         <ToggleTextButton buttontext="SHOW JOKE" toggletext="It's already finished. 🤣 🤣 🤣 " />
-        <Typography variant="body1" mt={2}>I know it’s brilliant — and if I could see you right now, I bet I’d see a smile on your face. 😊</Typography>
-        <Typography variant="body1" mt={2}>Now, let’s find out how I can help you!</Typography>
+        <Typography variant="body1" mt={2}>It’s brilliant, isn’t it? 😊</Typography>
+        <Typography variant="body1" mt={2}>If I could see you right now, I bet I’d see a smile on your face.</Typography>
+        <Typography variant="body1" mt={2}>Now, let’s find out how can I help you!</Typography>
       </Box>
 
       {/* Spacer to push contact box to vertical center */}

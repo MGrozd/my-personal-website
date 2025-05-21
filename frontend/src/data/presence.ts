@@ -5,7 +5,7 @@
 
 const presenceData = [
     {
-        name: "Udruga Programiranje i alogitmi Đakovo",
+        name: "Udruga Programiranje i algoritmi Đakovo",
         type: "Non-profit organization",
         role: "Founder and President",
         description: "Non-profit organization for youth development and education in the field of computer science and technology.",
@@ -13,7 +13,7 @@ const presenceData = [
         url: "https://piadjakovo.pythonanywhere.com/about",
     },
     {
-        name: "ONE CODE obrt za računalno programiranje",
+        name: "ONE CODE, obrt za računalno programiranje",
         type: "YouTube",
         role: "Content Creator",
         description: "YouTube channel where I promote my video games.",
