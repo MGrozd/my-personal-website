@@ -12,7 +12,12 @@ export default function Footer() {
     <Box mt={4} textAlign="center">
       <Typography variant="body2" color="text.secondary" display="flex" justifyContent="center" alignItems="center">
         <CopyrightIcon fontSize="small" sx={{ mr: 0.5 }} />
-        {new Date().getFullYear()} Designed and Developed by Matej Grozdanić. All rights reserved.
+          {new Date().getFullYear()} Matej Grozdanić. All rights reserved.
+          {/* CAN BE:
+          <CorporationIcon>
+          <CopyrightIcon fontSize="small" sx={{ mr: 0.5 }} />
+          Matej Grozdanić {new Date().getFullYear()}
+          */}
       </Typography>
     </Box>
   );

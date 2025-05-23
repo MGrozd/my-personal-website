@@ -51,7 +51,7 @@ export default function ProfileCard() {
                     Python Developer
                 </Typography>
                 <Typography variant="body2" color="black">
-                    Full stack developer
+                    Full-stack developer
                 </Typography>
             </Box>
         </Box>

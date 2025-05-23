@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  backend:
+    image: "${DOCKER_IMAGE_BACKEND:-your-ecr-backend-image}:latest"
+    environment:
+      - MONGO_HOST=db
+    ports:
+      - "8000:8000" # Adjust if needed
+
+  frontend:
+    image: "${DOCKER_IMAGE_FRONTEND:-your-ecr-frontend-image}:latest"
+    environment:
+      - VITE_BACKEND_API_URL=${VITE_BACKEND_API_URL}
+      - VITE_GA_TRACKING_ID=${VITE_GA_TRACKING_ID}
+      - VITE_PWD_SIGNUP_ENABLED=${VITE_PWD_SIGNUP_ENABLED}
+    ports:
+      - "3000:3000"
+
+  db:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_DATABASE=${MONGO_DB}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    ports:
+      - "27017:27017"
