@@ -114,3 +114,6 @@ Finally, enable write permission for the `GITHUB_TOKEN` to enable pushing images
 ### Make database integration
 
 ### Make possible updating data via website
+
+## Version
+v1.0.0
