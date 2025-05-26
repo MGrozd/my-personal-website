@@ -12,7 +12,7 @@ const workExperienceData = [
       "Currently working on an in-house video game developed in C++ using the SFML library, preparing it for release on the Steam platform.",
       "Working on a personal website using the FARMD stack (FastAPI, React, MongoDB, Docker).",
     ],
-    achievements: ["Successfully deployed personal website on Google Cloud Platform (GCP) using GitHub Actions."],
+    achievements: ["Successfully deployed personal website on Amazon ECS using GitHub Actions."],
     technologies: { 
       language: ["Python", "TypeScript", "JavaScript", "C++"], 
       gui: ["SFML"],
@@ -23,7 +23,7 @@ const workExperienceData = [
       sql: [], 
       nosql: ["MongoDB"], 
       devops: ["GitHub CI/CD", "Docker"], 
-      cloud: ["GCP"],
+      cloud: ["Amazon ECS"],
       monitoring: [],
       architecture: ["MVC", "Microservices"],
       versioning: ["GitHub", "GitLab"],
