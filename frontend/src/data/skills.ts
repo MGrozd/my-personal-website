@@ -3,6 +3,64 @@
 // description: This is the user's skills data which is not stored into database, but it could be in the future
 // license: MIT
 
+// 1. Familiar (Beginner)
+// 🧠 What they can do:
+//     - Writes and runs very simple scripts.
+//     - Understands basic syntax like print(), variables, loops, and conditionals.
+//     - Uses simple data types (strings, numbers, lists, dictionaries).
+//     - Often follows along with tutorials or online courses.
+// 💡 Example:
+//     - Makes a script that asks for your name and greets you.
+// 👤 Who understands this:
+//     - Someone new to programming or switching from another language. They may be a student, hobbyist, or someone just starting their coding journey.
+
+// 2. Working Knowledge (Basic Use)
+// 🧠 What they can do:
+//     - Writes small, useful programs or automations.
+//     - Organizes code using functions and modules.
+//     - Reads and writes files.
+//     - Uses built-in libraries like os, random, math.
+//     - Can fix basic bugs.
+// 💡 Example:
+//     - Automates file cleanup in a directory or makes a random password generator.
+// 👤 Who understands this:
+//     - A casual developer, junior engineer, or self-taught coder using Python to solve everyday problems or work tasks.
+
+// 3. Proficient (Intermediate)
+// 🧠 What they can do:
+//     - Uses list comprehensions, generators, and exceptions effectively.
+//     - Understands and uses Object-Oriented Programming.
+//     - Familiar with virtual environments, pip, and popular libraries like requests, pandas.
+//     - Writes clean, reusable, and modular code.
+// 💡 Example:
+//     - Builds a script that pulls data from an API and processes it into a spreadsheet.
+// 👤 Who understands this:
+//     - A regular Python user—maybe a data analyst, backend developer, or someone writing production-level scripts and tools.
+
+// 4. Expert (Advanced)
+// 🧠 What they can do:
+//     - Understands advanced features like decorators, context managers, metaclasses.
+//     - Knows the difference between multithreading and multiprocessing.
+//     - Understands the Python memory model and Global Interpreter Lock (GIL).
+//     - Can profile and optimize code performance.
+//     - Writes scalable, maintainable production systems.
+// 💡 Example:
+//     - Builds a highly concurrent system for processing large datasets in real time.
+// 👤 Who understands this:
+//     - An experienced software engineer, tech lead, or architect working on complex systems or large-scale projects.
+
+// 5. Authority (Core-Level)
+// 🧠 What they can do:
+//     - Writes tools, libraries, or frameworks used by others.
+//     - Contributes to Python open-source projects—or Python itself.
+//     - Understands how CPython is built and can read its source code.
+//     - Influences the Python community or speaks at major conferences.
+// 💡 Example:
+//     - Maintains a popular Python package, contributes to the Python Enhancement Proposals (PEPs), or gives talks at PyCon.
+// 👤 Who understands this:
+//     - A Python core developer, prominent open-source contributor, or influential educator/leader in the Python community.
+
+
 const skillsData = [
     {
         name: "PYTHON",

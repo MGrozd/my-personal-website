@@ -1,16 +1,21 @@
-from contextlib import asynccontextmanager
+# authors: Matej Grozdanić
+# date: 2025-05-27
+# description: This code is the main entry point for the FastAPI application.
+# license: MIT license
 
-from beanie import init_beanie
+# from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
+# from beanie import init_beanie
+# from motor.motor_asyncio import AsyncIOMotorClient
 
-from .auth.auth import get_hashed_password
 from .config.config import settings
-from .models.users import User, Admin
 from .routers.api import api_router
+# from .auth.auth import get_hashed_password
+# from .models.users import User, Admin
 
-
+''' TODO: make database connection within Docker container or production and use environment variables for configuration
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # --------------------
@@ -57,15 +62,15 @@ async def lifespan(app: FastAPI):
 
     # yield app
     yield
-
+'''
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json",
-    lifespan=lifespan,
+    # lifespan=lifespan,
 )
 
-# Set all CORS enabled origins
+''' Set all CORS enabled origins '''
 if settings.BACKEND_CORS_ORIGINS:
     app.add_middleware(
         CORSMiddleware,

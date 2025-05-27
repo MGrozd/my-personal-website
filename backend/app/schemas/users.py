@@ -1,7 +1,7 @@
 # author: Matej Grozdanić
-# license: MIT license
 # date: 2025-05-13
 # description: This code is a schemas for API. It uses Pydantic.
+# license: MIT license
 
 from uuid import UUID
 from typing import List, Optional
