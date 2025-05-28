@@ -117,3 +117,5 @@ Finally, enable write permission for the `GITHUB_TOKEN` to enable pushing images
 
 ## Version
 v1.0.0
+
+## AWS Deployment
