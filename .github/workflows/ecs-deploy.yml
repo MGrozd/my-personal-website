@@ -1,0 +1,46 @@
+name: Deploy to AWS ECS
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_PROJECT_NAME: my-personal-website
+      AWS_CLUSTER_NAME: my-personal-website-cluster
+      AWS_SERVICE_NAME: my-personal-website-task-service-1o4dh464
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+      GITHUB_SHA: ${{ github.sha }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+
+      - name: Build and push Docker images
+        run: |
+          docker compose -f docker-compose.aws-ecs.yml --project-name $AWS_PROJECT_NAME build
+          docker compose -f docker-compose.aws-ecs.yml --project-name $AWS_PROJECT_NAME push
+
+      - name: Deploy to ECS
+        run: |
+          set -e
+          aws ecs update-service \
+            --cluster $AWS_CLUSTER_NAME \
+            --service $AWS_SERVICE_NAME \
+            --force-new-deployment
+
