@@ -12,6 +12,8 @@ jobs:
       AWS_PROJECT_NAME: my-personal-website
       AWS_CLUSTER_NAME: my-personal-website-cluster
       AWS_SERVICE_NAME: my-personal-website-task-service-1o4dh464
+      AWS_REPOSITORY_FRONTEND_NAME: ${AWS_PROJECT_NAME}-frontend
+      AWS_REPOSITORY_BACKEND_NAME: ${AWS_PROJECT_NAME}-backend
       AWS_REGION: ${{ secrets.AWS_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       GITHUB_SHA: ${{ github.sha }}

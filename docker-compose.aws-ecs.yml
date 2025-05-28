@@ -4,10 +4,10 @@ services:
   frontend:
     build:
       context: ./frontend
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/frontend:release-${GITHUB_SHA}
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_REPOSITORY_FRONTEND_NAME}:release-${GITHUB_SHA}
 
   backend:
     build:
       context: ./backend
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/backend:release-${GITHUB_SHA}
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_REPOSITORY_BACKEND_NAME}:release-${GITHUB_SHA}
 
