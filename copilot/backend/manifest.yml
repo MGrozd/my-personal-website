@@ -7,31 +7,58 @@ image:
     dockerfile: ./backend/Dockerfile
   port: 8000
 
+cpu: 512      # Increased for production
+memory: 1024  # Increased for production
+count: 2      # Minimum 2 for high availability
 
+http:
+  healthcheck:
+    path: /api/v1/
+    interval: 15s
+    timeout: 5s
+    healthy_threshold: 2
+    unhealthy_threshold: 3
+
+# Simplified permissions using Copilot's built-in policy management
+permissions:
+  - ssm:GetParameters
+  - dynamodb:*   # Add if using DynamoDB
+  - rds-db:*     # Add if using RDS
+  - s3:*         # Add if using S3
+
+# Secure secrets management
+secrets:
+  FIRST_SUPERUSER: /copilot/production/backend/FIRST_SUPERUSER
+  FIRST_SUPERUSER_PASSWORD: /copilot/production/backend/FIRST_SUPERUSER_PASSWORD
+  DATABASE_URL: /copilot/production/backend/DATABASE_URL
+
+# Environment variables with service discovery
 variables:
   PROJECT_NAME: my-personal-website
+  CORS_ORIGINS: "https://frontend.${COPILOT_APPLICATION_NAME}.${COPILOT_ENVIRONMENT_NAME}.${COPILOT_DOMAIN_NAME}"
 
-secrets:
-  FIRST_SUPERUSER: my-personal-website/FIRST_SUPERUSER
-  FIRST_SUPERUSER_PASSWORD: my-personal-website/FIRST_SUPERUSER_PASSWORD
-
-cpu: 256
-memory: 512
-count: 1
-
+# Enhanced autoscaling configuration
 autoscaling:
-  range: 1-3
-  cpu_percentage: 70
-  memory_percentage: 75
+  range: 2-8  # Wider range for backend
+  cpu_percentage: 60
+  memory_percentage: 65
+  requests: 500  # Scale based on request count
 
-healthcheck:
-  command: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/ || exit 1"]
-  interval: 10s
-  timeout: 5s
-  retries: 2
-  start_period: 30s
+# # Database configuration (if needed)
+# storage:
+#   postgres:
+#     type: Aurora  # Or 'RDS' for PostgreSQL
+#     engine: postgres
+#     version: "15"
+#     storage: 20   # GB
+#     instances: 2  # For Aurora
 
+# Production-specific overrides
 environments:
   production:
-    variables:
-      ENV: production
+    count: 3
+    cpu: 1024
+    memory: 2048
+    storage:
+      instances: 3
+      storage: 50

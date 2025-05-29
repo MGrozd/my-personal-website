@@ -9,21 +9,48 @@ image:
 
 cpu: 256
 memory: 512
-count: 1  # Optional: set to 2 if you want to start with 2 tasks
+count: 2  # Better for high availability
 
+# http:
+#   path: "/"
+#   healthcheck:
+#     path: "/health"  # Recommended: dedicated healthcheck endpoint
+#     success_codes: "200-499"
+#     interval: 15s
+#     timeout: 10s
+#     grace_period: 60s
+
+# Simplified permissions using Copilot's built-in policy management
+permissions:
+  - ssm:GetParameters  # No need for full ARN specification
+
+# Enhanced autoscaling configuration
 autoscaling:
-  range: 1-3
-  cpu_percentage: 70
-  memory_percentage: 75
+  range: 1-5  # More flexible scaling range
+  cpu_percentage: 60
+  memory_percentage: 65
+  requests: 1000  # Scale based on request count
 
-http:
-  path: "/"
-  healthcheck:
-    path: "/"
-    grace_period: 60s
-
+# Environment variables with secrets management
 environments:
   production:
     variables:
       ENV: production
+      REACT_APP_API_URL: !Sub http://backend.${App}.${Env}.${COPILOT_DOMAIN_NAME}  # Auto-generated backend URL
+    secrets:  # Securely manage secrets
+      API_KEY: /copilot/production/frontend/API_KEY
 
+# Add CloudFront CDN for global caching
+cdn:
+  enabled: true
+  certificate: !Sub arn:aws:acm:us-east-1:${AWS::AccountId}:certificate/...
+  domain: yourdomain.com
+
+# Production-specific resource overrides
+environments:
+  production:
+    count: 3  # Increase instance count
+    cpu: 512
+    memory: 1024
+    cdn:
+      custom_domain: www.yourdomain.com
