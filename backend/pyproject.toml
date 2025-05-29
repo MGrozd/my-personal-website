@@ -11,8 +11,9 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
+uvicorn = "^0.29.0"
 python = "^3.12"
-requests = "^2.32.3"
+requests = "2.32.3"
 pymongo = "^4.9.2"
 fastapi = {extras = ["standard"], version = "^0.115.0"}
 python-multipart = "^0.0.12"

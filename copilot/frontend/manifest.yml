@@ -1,0 +1,29 @@
+name: frontend
+type: Load Balanced Web Service
+
+image:
+  build:
+    context: ./frontend
+    dockerfile: ./frontend/Dockerfile
+  port: 3000
+
+cpu: 256
+memory: 512
+count: 1  # Optional: set to 2 if you want to start with 2 tasks
+
+autoscaling:
+  range: 1-3
+  cpu_percentage: 70
+  memory_percentage: 75
+
+http:
+  path: "/"
+  healthcheck:
+    path: "/"
+    grace_period: 60s
+
+environments:
+  production:
+    variables:
+      ENV: production
+

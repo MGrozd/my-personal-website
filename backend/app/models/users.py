@@ -2,7 +2,9 @@
 # license: MIT license
 # date: 2025-05-12
 # description: This code is a models for database. It uses Beanie Documents for ORM.
- 
+
+
+''' TODO: connect with database
 from typing import List, Annotated, Optional
 from uuid import UUID, uuid4
 
@@ -157,6 +159,8 @@ class Admin(User):
     date_of_birth: Optional[str] = None
     picture_path: Optional[str] = None
     phone_number: Optional[str] = None
+'''
+
 """
 Company Profile
 ---------------------

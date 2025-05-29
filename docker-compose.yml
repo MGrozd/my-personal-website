@@ -55,7 +55,7 @@ services:
       - MONGO_HOST=db
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.development
     command:
       - fastapi
       - run

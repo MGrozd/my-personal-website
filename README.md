@@ -119,3 +119,4 @@ Finally, enable write permission for the `GITHUB_TOKEN` to enable pushing images
 v1.0.0
 
 ## AWS Deployment
+add deployment with AWS Copilot

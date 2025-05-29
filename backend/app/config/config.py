@@ -4,10 +4,11 @@ from typing import Literal
 from pydantic import AnyHttpUrl, EmailStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
+# TODO: separate settings for development,testing and production
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         # Use top level .env file (one level above ./backend/)
+        # used locally for development
         env_file="../../.env",
         env_ignore_empty=True,
         extra="ignore",
@@ -24,6 +25,7 @@ class Settings(BaseSettings):
     FIRST_SUPERUSER: EmailStr
     FIRST_SUPERUSER_PASSWORD: str
 
+    ''' TODO: make connection with db and auth
     # FIRST USER
     USER_LOGIN_EMAIL: EmailStr
     USER_PASSWORD: str
@@ -47,6 +49,7 @@ class Settings(BaseSettings):
     GOOGLE_CLIENT_SECRET: str | None = None
     SSO_CALLBACK_HOSTNAME: str | None = None
     SSO_LOGIN_CALLBACK_URL: str | None = None
+    '''
 
 
 settings = Settings()  # type: ignore
