@@ -107,6 +107,9 @@ You also need to add an environment secret variable `SERVER_ENV_PROD` which shou
 
 Finally, enable write permission for the `GITHUB_TOKEN` to enable pushing images to your package registry: Go to `Settings` > `Actions` > `General` and check `Read and write permissions` under `Workflow permissions`.
 
+## Version
+v1.0.0
+
 ## Roadmap
 
 ### Generate CV in PDF format from data
@@ -115,8 +118,7 @@ Finally, enable write permission for the `GITHUB_TOKEN` to enable pushing images
 
 ### Make possible updating data via website
 
-## Version
-v1.0.0
-
 ## AWS Deployment
 add deployment with AWS Copilot
+
+
