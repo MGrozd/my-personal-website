@@ -5,7 +5,7 @@ image:
   build:
     context: ./frontend
     dockerfile: ./frontend/Dockerfile
-  port: 3000
+  port: 80
 
 cpu: 256
 memory: 512

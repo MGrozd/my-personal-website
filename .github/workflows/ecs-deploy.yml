@@ -34,9 +34,11 @@ jobs:
         run: |
           copilot env init --name production --region $AWS_REGION || echo "Env already exists"
 
+      - name: Deploy backend service
+        run: copilot deploy --name backend --env production
+        
       - name: Deploy frontend service
         run: copilot deploy --name frontend --env production
 
-      - name: Deploy backend service
-        run: copilot deploy --name backend --env production
+      
 
