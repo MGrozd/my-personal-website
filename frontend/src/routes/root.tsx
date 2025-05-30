@@ -1,15 +1,12 @@
-// author: Matej Grozdanić
-// date: 2025-05-19
-// description: This is root(home) page.
-// license: MIT
-
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Box } from '@mui/material';
+import ProfileCard from '../components/ProfileCard';
+import LeftMenuBar from '../components/LeftMenuBar';
+import Footer from '../components/Footer';
 
 export default function Root() {
-  // Explicitly type the ref as HTMLDivElement or null
-  const mainContentRef = useRef<HTMLDivElement | null>(null);
+  const mainContentRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,11 +17,34 @@ export default function Root() {
 
   return (
     <Box
-      sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
+      }}
     >
-      {/* Sidebar code omitted for brevity */}
       <Box
-        ref={mainContentRef} // This ref points to a div element
+        sx={{
+          position: { xs: 'relative', sm: 'fixed' },
+          top: { xs: 'auto', sm: 0 },
+          left: { xs: 'auto', sm: 0 },
+          height: { xs: 'auto', sm: '100vh' },
+          width: { xs: '100%', sm: '35vh' },
+          flexShrink: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: { xs: 'left', sm: 'center' },
+          borderRight: { sm: '1px solid #ccc' },
+          borderBottom: { xs: '1px solid #ccc', sm: 'none' },
+          bgcolor: 'white',
+        }}
+      >
+        <ProfileCard />
+        <LeftMenuBar />
+      </Box>
+
+      <Box
+        ref={mainContentRef}
         sx={{
           width: '100%',
           minHeight: '100vh',
@@ -38,7 +58,7 @@ export default function Root() {
         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Outlet />
         </Box>
-        {/* Footer */}
+        <Footer />
       </Box>
     </Box>
   );
