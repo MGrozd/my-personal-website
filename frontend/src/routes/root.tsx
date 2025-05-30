@@ -1,4 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+// author: Matej Grozdanić
+// date: 2025-05-30
+// description: This is the root(home) page.
+// license: MIT
+
+import { useRef, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Box } from '@mui/material';
 import ProfileCard from '../components/ProfileCard';
@@ -6,7 +11,8 @@ import LeftMenuBar from '../components/LeftMenuBar';
 import Footer from '../components/Footer';
 
 export default function Root() {
-  const mainContentRef = useRef(null);
+  // Explicitly type the ref as HTMLDivElement or null
+  const mainContentRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
 
   useEffect(() => {
