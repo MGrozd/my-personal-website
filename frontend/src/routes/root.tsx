@@ -1,73 +1,39 @@
-// author: Matej Grozdanić
-// date: 2025-05-13
-// description: This is the root layout component that wraps around all the routes
-// license: MIT
-
-import { Outlet } from 'react-router-dom'
-import { Box } from '@mui/material'
-import ProfileCard from '../components/ProfileCard'
-import LeftMenuBar from '../components/LeftMenuBar'
-import Footer from '../components/Footer'
-
-// It contains the top menu bar and the main content area
-// It uses the Outlet component to render the child routes
-// The Outlet component is a placeholder for the child routes
-// The Box component is used to create a flex container for the top menu bar and the main content area
-// The Toolbar component is used to create a space for the top menu bar
+import { useRef, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Box } from '@mui/material';
+import ProfileCard from '../components/ProfileCard';
+import LeftMenuBar from '../components/LeftMenuBar';
+import Footer from '../components/Footer';
 
 export default function Root() {
+  const mainContentRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (mainContentRef.current) {
+      mainContentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location.pathname]);
+
   return (
     <Box
       sx={{
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' }, // column on mobile, row on larger screens
+        flexDirection: { xs: 'column', sm: 'row' },
       }}
     >
-      {/* Sidebar container */}
-      {/* <Box
-        sx={{
-          width: { xs: '100%', sm: '35vh' },
-          height: { xs: 'auto', sm: '100vh' },
-          display: 'flex',
-          flexDirection: 'column', // stack ProfileCard and LeftMenuBar vertically
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          borderRight: { sm: '1px solid #ccc' },
-          borderBottom: { xs: '1px solid #ccc', sm: 'none' },
-          bgcolor: 'white', // Optional: give it a red background like before
-        }}
-      > */}
-      {/* Sidebar container */}
       <Box
         sx={{
-          position: {
-            xs: 'relative',  // 📱 Na malim ekranima: normalno se ponaša
-            sm: 'fixed'      // 💻 Na većim ekranima: fiksiran
-          },
-          top: {
-            xs: 'auto',
-            sm: 0
-          },
-          left: {
-            xs: 'auto',
-            sm: 0
-          },
-          height: {
-            xs: 'auto',
-            sm: '100vh'
-          },
-          width: {
-            xs: '100%',
-            sm: '35vh'
-          },
+          position: { xs: 'relative', sm: 'fixed' },
+          top: { xs: 'auto', sm: 0 },
+          left: { xs: 'auto', sm: 0 },
+          height: { xs: 'auto', sm: '100vh' },
+          width: { xs: '100%', sm: '35vh' },
           flexShrink: 0,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          alignItems: {
-            xs: 'left',
-            sm: 'center'
-          },
+          alignItems: { xs: 'left', sm: 'center' },
           borderRight: { sm: '1px solid #ccc' },
           borderBottom: { xs: '1px solid #ccc', sm: 'none' },
           bgcolor: 'white',
@@ -76,23 +42,24 @@ export default function Root() {
         <ProfileCard />
         <LeftMenuBar />
       </Box>
-      {/* Main content area */}
+
       <Box
+        ref={mainContentRef}
         sx={{
-          width: "100%",
-          minHeight: "100vh",
-          fontFamily: "Roboto, sans-serif",
-          background: "linear-gradient(to right, #ffffff, #f0f0f0)",
-          display: "flex",
-          flexDirection: "column", // stack Outlet + Footer vertically
-          justifyContent: "space-between",
+          width: '100%',
+          minHeight: '100vh',
+          fontFamily: 'Roboto, sans-serif',
+          background: 'linear-gradient(to right, #ffffff, #f0f0f0)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
         }}
       >
-        <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Outlet />
         </Box>
         <Footer />
       </Box>
-    </Box >
-  )
+    </Box>
+  );
 }

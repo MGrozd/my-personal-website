@@ -26,117 +26,53 @@ import {
 
 function LeftMenuBar() {
   return (
-      <Box
-        width="35vh"
-        bgcolor="white"
-        color="white"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        pt={2}
-      >
-        <List sx={{ width: "100%", mt: 0 }}>
-          <ListItemButton component={Link} to="/">
-            <ListItemIcon sx={{ color: "#f44336" }}>
-              <Person />
+    <Box
+      width="35vh"
+      bgcolor="white"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      pt={2}
+      sx={{ boxShadow: { sm: '2px 0 5px rgba(0,0,0,0.1)' }, px: 1 }}
+    >
+      <List sx={{ width: "100%", mt: 0 }}>
+        {[
+          { to: "/", icon: <Person />, label: "Profile", color: "#f44336" },
+          { to: "/experience", icon: <Restore />, label: "Experience", color: "purple" },
+          { to: "/projects", icon: <WebRounded />, label: "Projects", color: "green" },
+          { to: "/skills", icon: <BarChart />, label: "Skills", color: "blue" },
+          { to: "/presence", icon: <PresentToAllRounded />, label: "Presence", color: "darkorange" },
+          { to: "/languages", icon: <LanguageRounded />, label: "Languages", color: "gold" },
+          { to: "/educations", icon: <SchoolRounded />, label: "Educations", color: "pink" },
+          { to: "/companies", icon: <BusinessRounded />, label: "Companies", color: "black" },
+          { to: "/articles", icon: <DescriptionRounded />, label: "Articles", color: "magenta" },
+          { to: "/hobbies", icon: <BookRounded />, label: "Hobbies", color: "brown" },
+        ].map(({ to, icon, label, color }) => (
+          <ListItemButton
+            key={label}
+            component={Link}
+            to={to}
+            sx={{
+              "&:hover": {
+                backgroundColor: "#f5f5f5",
+              },
+            }}
+          >
+            <ListItemIcon sx={{ color }}>
+              {icon}
             </ListItemIcon>
             <ListItemText
-              primary="Profile"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
+              primary={label}
+              primaryTypographyProps={{
+                color: "gray",
+                fontWeight: "bold",
+                fontSize: "1.2rem",
+              }}
             />
           </ListItemButton>
-
-          <ListItemButton component={Link} to="/experience">
-            <ListItemIcon sx={{ color: "purple" }}>
-              <Restore />
-            </ListItemIcon>
-            <ListItemText
-              primary="Experience"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/projects">
-            <ListItemIcon sx={{ color: "green" }}>
-              <WebRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Projects"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/skills">
-            <ListItemIcon sx={{ color: "blue" }}>
-              <BarChart />
-            </ListItemIcon>
-            <ListItemText
-              primary="Skills"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/presence">
-            <ListItemIcon sx={{ color: "darkorange" }}>
-              <PresentToAllRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Presence"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/languages">
-            <ListItemIcon sx={{ color: "gold" }}>
-              <LanguageRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Languages"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/educations">
-            <ListItemIcon sx={{ color: "pink" }}>
-              <SchoolRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Educations"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/companies">
-            <ListItemIcon sx={{ color: "black" }}>
-              <BusinessRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Companies"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton> 
-
-          <ListItemButton component={Link} to="/articles">
-            <ListItemIcon sx={{ color: "mangenta" }}>
-              <DescriptionRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Articles"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-
-          <ListItemButton component={Link} to="/hobbies">
-            <ListItemIcon sx={{ color: "brown" }}>
-              <BookRounded />
-            </ListItemIcon>
-            <ListItemText
-              primary="Hobbies"
-              primaryTypographyProps={{ color: "gray", fontWeight: "bold", fontSize: "1.2rem" }}
-            />
-          </ListItemButton>
-        </List> 
-      </Box>
+        ))}
+      </List>
+    </Box>
   );
 }
 
