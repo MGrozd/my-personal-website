@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd frontend  # Move into the frontend directory
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: frontend/dist  # Vite's default build output directory
+    files: ['**/*']
+  environment: # environment variables
+    variables: 
+      VITE_BACKEND_API_URL: "http://localhost:8000/api/v1/" 
