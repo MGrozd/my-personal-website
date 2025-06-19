@@ -1,17 +1,37 @@
 # Fastapi-React-Mongodb-Docker
 
 ![Tests]()
-![Build]()
+[![Build] (https://deploy.d3bsre7bmx71hv.amplifyapp.com/) (URL)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/MGrozd/my-personal-website/deploy.yml)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 ![python_version](https://img.shields.io/badge/Python-%3E=3.10-blue)
 
 This is a personal website project. This project use a FARM stack. FARM stands for FastAPI, React, MongoDB.
 
-## Features
+## Roadmap
 
-### Clean design with minimal dependencies
+### Make database integration
 
-Add*
+### Make possible updating data via website
+
+### Generate CV in PDF format from data
+
+## Version
+
+v1.0.0
+
+## AWS Deployment
+
+Frontend is deployed on Amazon Amplify service:
+
+https://deploy.d3bsre7bmx71hv.amplifyapp.com/
+
+Amazon Amplify service settings file:
+
+[amplify.yml](amplify.yml)
+
+Amazon Amplify service is connected with GitHub account. When release branch on repository is updated then also is updated website.
+
 
 ## Project structure
 
@@ -106,17 +126,3 @@ The project has a [build workflow](./.github/workflows/build.yml) configuration 
 You also need to add an environment secret variable `SERVER_ENV_PROD` which should contain the root `.env` file with the variables set for your production environment (simply copy-paste the contents of the env file as the github secret). This secret environment variable will be used by the github workflow to build the docker images with the [docker-compose.prod.yml](./docker-compose.prod.yml) file.
 
 Finally, enable write permission for the `GITHUB_TOKEN` to enable pushing images to your package registry: Go to `Settings` > `Actions` > `General` and check `Read and write permissions` under `Workflow permissions`.
-
-## Roadmap
-
-### Generate CV in PDF format from data
-
-### Make database integration
-
-### Make possible updating data via website
-
-## Version
-v1.0.0
-
-## AWS Deployment
-add deployment with AWS Copilot

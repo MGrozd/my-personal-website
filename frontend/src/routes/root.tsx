@@ -52,8 +52,9 @@ export default function Root() {
       <Box
         ref={mainContentRef}
         sx={{
-          width: '100%',
+          width: { xs: '100%', sm: 'calc(100% - 35vh)' },
           minHeight: '100vh',
+          marginLeft: { sm: '35vh' }, // Push content to the right of sidebar
           fontFamily: 'Roboto, sans-serif',
           background: 'linear-gradient(to right, #ffffff, #f0f0f0)',
           display: 'flex',

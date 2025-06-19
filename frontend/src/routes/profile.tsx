@@ -3,9 +3,9 @@
 // description: This is the profile page component that displays the user's profile information
 // license: MIT
 
-import { Box, Typography } from "@mui/material";
-import { Email, Phone, Home } from "@mui/icons-material";
-import ToggleTextButton from "../components/ToggleTextButton";
+import { Box, Typography, Link } from "@mui/material";
+import { Person, Email, Phone, Home, GitHub, LinkedIn,} from "@mui/icons-material";
+import profileData from "../data/profile";
 
 export default function Profile() {
   return (
@@ -16,24 +16,34 @@ export default function Profile() {
         background: "linear-gradient(to right, #ffffff, #f0f0f0)",
         display: "flex",
         flexDirection: "column",
+        marginTop: "2rem",
       }}
     >
       {/* Intro box at the top */}
+      <Box sx={{
+        flexGrow: 1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+      }}>
+        <Person sx={{ mr: 1, color: "red" }} />
+        <Typography variant="h5">{profileData.title}</Typography>
+      </Box>
+
       <Box
         sx={{
-          width: "100%",
+          flexGrow: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "80%",
           padding: 4,
-          textAlign: "center",
+          margin: "0 auto", // Optional: center the Box itself horizontally if it's a child of a larger container
+          textAlign: "justify",
         }}
       >
-        <Typography variant="body1">Hi! 👋</Typography>
-        <Typography variant="body1">I’d like to introduce myself — my name is Matej.</Typography>
-        <Typography variant="body1">I have a very, very fast joke for you. I think it’s the fastest one you’ve ever heard.</Typography>
-        <Typography variant="body1">Are you ready? Click the button below! 👇</Typography>
-        <ToggleTextButton buttontext="SHOW JOKE" toggletext="It's already finished. 🤣 🤣 🤣 " />
-        <Typography variant="body1" mt={2}>It’s brilliant, isn’t it? 😊</Typography>
-        <Typography variant="body1" mt={2}>If I could see you right now, I bet I’d see a smile on your face.</Typography>
-        <Typography variant="body1" mt={2}>Now, let’s find out how can I help you!</Typography>
+        <Typography variant="body1">{profileData.professionalSummary}</Typography>
       </Box>
 
       {/* Spacer to push contact box to vertical center */}
@@ -46,25 +56,48 @@ export default function Profile() {
         {/* Contact info box */}
         <Box textAlign="center">
           <Typography variant="h3" fontWeight="bold" color="gray">
-            Matej Grozdanić
+            {profileData.fullName}
           </Typography>
 
           <Box mt={4}>
             <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
+              <GitHub sx={{ color: "#f44336", mr: 1 }} />
+              <Link href={profileData.gitHub} variant="body1">{profileData.gitHub}</Link>
+            </Box>
+            <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
+              <LinkedIn sx={{ color: "#f44336", mr: 1 }} />
+              <Link href={profileData.linkedIn} variant="body1">{profileData.linkedIn}</Link>
+            </Box>
+            <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
               <Phone sx={{ color: "#f44336", mr: 1 }} />
-              <Typography variant="body1">+385 97 6666 884</Typography>
+              <Typography variant="body1">
+                {profileData.phoneNumbers.map((phoneNumber, i) => (
+                  <span key={i}>
+                    {phoneNumber}
+                    {i < profileData.phoneNumbers.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
               <Email sx={{ color: "#f44336", mr: 1 }} />
-              <Typography variant="body1">matej.grozdanic0@gmail.com</Typography>
+              <Typography variant="body1">
+                {profileData.emails.map((email, i) => (
+                  <span key={i}>
+                    {email}
+                    {i < profileData.emails.length - 1 ? ", " : ""}
+                  </span>
+                ))}
+              </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
               <Home sx={{ color: "#f44336", mr: 1 }} />
-              <Typography variant="body1">Đakovo, Croatia</Typography>
+              <Typography variant="body1">{profileData.city}, {profileData.state}, {profileData.country}</Typography>
             </Box>
           </Box>
         </Box>
       </Box>
+
     </Box>
   );
 }
