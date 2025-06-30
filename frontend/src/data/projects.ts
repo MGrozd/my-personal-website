@@ -8,7 +8,7 @@ const projectsData = [
         name: "PERSONAL WEBSITE",
         description: "Built a personal website using the FARM stack (FastAPI, React, MongoDB) to showcase personal information and projects.",
         timeframe: "05/2025 – Ongoing",
-        url: "https://matejgrozdanic.com",
+        url: "https://deploy.d3bsre7bmx71hv.amplifyapp.com/",
         repository: "https://github.com/MGrozd/my-personal-website",
         technologies: "Python, FastAPI, TypeScript, React, ReactRouter, MaterialUI, MongoDB, Github, Docker, Google Cloud",
     },
